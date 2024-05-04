@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta etiquetas para el juego de caracteres y la vista del dispositivo -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Enlaces a las hojas de estilo -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- Enlace a la fuente de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Título de la página y favicon -->
+    <title>Projects</title>
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+
+</head>
+<body>
+    <!-- Div para el cursor personalizado -->
+    <div id="customCursor"></div>
+    
+    
+    <!-- Encabezado de la página -->
+    <header class="header__projects">
+        <nav class="header__back">
+           <a href="index.html">Volver</a>
+        </nav>
+    </header>
+    
+    
+    <!-- Primer proyecto -->
+    <div class="card">
+        <div class="card_video" onmouseover=" toggleCardContent(this)" onmouseleave="toggleCardContent(this)">
+            <video src="assets/videouxui.webm" autoplay muted loop preload="none" poster="assets/Macbook.jpg"></video> 
+        </div>
+        <div class="card_content">
+            <!-- Título y descripción del proyecto -->
+            <h3 class="proyecto__titulo">Huge App</h3>
+            <p class="proyecto__descripcion">Creación del prototipo de esta app con figma, la cual quiere ser creada para ayudar a personas con ansiedad o depresión.</p>
+        </div>
+    </div>
+  
+    <!-- Segundo proyecto -->
+    <div class="card">
+        <div class="card_img" onmouseover="toggleCardContent(this)" onmouseleave="toggleCardContent(this)">
+            <img src="assets/queen_airpods-fotor-2024050315330.jpg" alt="direccion de arte para apple">
+        </div>
+    <div class="card_content">
+        <!-- Título y descripción del proyecto -->
+        <h3 class="proyecto__titulo">Dirección de Arte Apple</h3>
+        <p class="proyecto__descripcion">Dirección de arte ficticia para Apple en la que quieren hacer campaña de la buena cancelación de ruido que tienen sus airpods y se incluyen ruidos molestos del exterior, en este caso el niño, como si formaran parte de la canción.</p>
+    </div>
+    </div>
+
+    <!-- Tercer proyecto -->
+    <div class="card">
+       <div class="card_img" onmouseover="toggleCardContent(this)" onmouseleave="toggleCardContent(this)">
+         <img src="assets/Re-styling-20-fotor-20240503153757.jpg" alt="re-styling casa del libro">
+       </div>
+    <div class="card_content">
+        <!-- Título y descripción del proyecto -->
+        <h3 class="proyecto__titulo">Re-styling Casa del Libro</h3>
+        <p class="proyecto__descripcion">En este proyecto se hizo un re-styling de la identidad de la Casa del Libro y aquí vemos un ejemplo de como cambiaría el diseño de una publicación en redes sociales.</p>
+    </div>
+    </div>
+
+    
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p class="footer__texto">© 2024 w/love Beatriz FG ♥️ </p>
+    </footer>
+    
+    <!-- Script para los proyectos -->
+    <script defer src="js/projects.js"></script>
+
+
+</body>
+</html>
+
+
+
+

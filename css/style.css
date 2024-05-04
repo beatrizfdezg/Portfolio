@@ -1,0 +1,911 @@
+
+/* Definición de variables CSS */
+:root {
+    /* Colores */
+    --verde: rgb(116, 197, 2);
+    --coral: coral;
+    --amarillo: rgb(255, 213, 0);
+    --blanco: white;
+    --negro: black;
+    --gris: rgb(117, 117, 117);
+    /* Fuente */
+    --tipo: 'Montserrat', sans-serif;
+
+}
+
+/* Estilos generales del cuerpo del documento */
+body{
+    cursor: none; /* Oculta el cursor predeterminado */
+}
+
+/* Estilos específicos para la página de inicio */
+/* Encabezado */
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: var(--negro);
+    padding: 4rem;
+    display: flex;
+    object-fit: cover;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+header .logo{
+    width: 15vw;
+    cursor: pointer;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+nav ul li{
+    list-style: none;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: var(--tipo);
+    color: var(--blanco);
+    padding: 6px 15px;
+    border-radius: 20px;
+    
+}
+
+/* Estilos para cuando se pasa el mouse sobre los enlaces */
+
+nav ul li a:hover,
+nav ul li a.active{
+    background: var(--coral);
+    color: var(--negro);
+}
+
+/* Sección principal */
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    overflow: hidden;
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    
+    z-index: 10;
+}
+
+/* Imagen de fondo de la sección principal */
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Texto principal de la sección principal */
+
+section #slogan{
+    position: absolute;
+    color: var(--negro);
+    font-size: 6rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: var(--tipo);
+    white-space: nowrap;
+    transform: translateY(-200px);
+    margin:auto;
+    top: 55vh;
+    z-index: 2;   
+}
+
+/* Contenedor de información adicional */
+
+.info{
+    background: var(--negro);
+    position: relative;
+    padding: 7rem;
+    margin: auto;
+    
+}
+
+.info h2{
+    font-size: 5rem;
+    font-family: var(--tipo);
+    color: var(--blanco);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.info h3{
+    font-size: 3rem;
+    font-family: var(--tipo);
+    color: var(--blanco);
+    margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.info p{
+    font-size: 2rem;
+    color: var(--blanco);
+    line-height: 3.5rem;
+    text-align: justify;
+    max-width: 60vw;
+    margin-left: 10vw;
+    
+    
+}
+
+#hamburguesa{
+    display:none;
+}
+
+
+
+
+/* Estilos para el botón de regreso y el botón de información */
+
+.header__about a{
+    font-size: 2rem;
+    color: var(--blanco);
+    background-color: var(--coral);
+    padding: 2rem;
+    text-align: center;
+    position: fixed;
+    right: 2vw;
+    top:2vw;
+    border-radius: 6rem;
+    font-weight: 600;
+}
+
+.header__back a{
+    font-size: 2rem;
+    color: var(--blanco);
+    background-color: var(--coral);
+    padding: 2rem;
+    text-align: center;
+    position: fixed;
+    right: 2vw;
+    top:2vw;
+    border-radius: 6rem;
+    font-weight: 600;
+}
+
+.header__about a:hover,
+.header__about a.active{
+    background: var(--blanco);
+    color: var(--coral);
+}
+
+.header__back a:hover,
+.header__back a.active{
+    background: var(--blanco);
+    color: var(--coral);
+}
+
+/* Estilos para la página about */
+
+.background_about {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: changeBackground 15s infinite alternate;
+}
+  
+  @keyframes changeBackground {
+    0% { background-color: var(--coral); }
+    25% { background-color: var(--amarillo); }
+    50% { background-color: var(--verde); }
+    75% { background-color: #00cddf; }
+    100% { background-color: var(--verde); }
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 12rem;
+    margin-top: 6vh;
+}
+
+.acordeon{
+    
+    width:50vw;
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 2rem;
+    
+    
+
+}
+
+.contenido{
+    background-color: var(--negro);
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 2rem;
+
+   
+}
+
+
+
+.texto{
+    color: var(--blanco);
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all .5s ease;
+    
+}
+.h2{
+    color: var(--blanco);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: var(--tipo);
+    text-align: center;
+    margin: auto;
+}
+
+.acordeon .contenido.activo .texto{
+    height: auto;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5rem;
+    
+    
+   
+}
+
+.texto {
+    display: none; /* Ocultar el contenido por defecto */
+    
+}
+
+.texto.activo {
+    display: block; /* Mostrar el contenido cuando tenga la clase activo */
+  
+}
+
+.img_about{
+    width: 20vw;
+    max-height: 55vh;
+    
+    
+}
+
+
+
+
+
+/* Estilos para la página de proyectos */
+
+.header__projects{
+    width: 40vw;
+    min-height: 10vh;
+    background-color: transparent;
+    
+
+}
+
+
+.card_content{
+    padding: 4rem;
+
+}
+
+.proyecto__titulo{
+    font-size: 2.5rem;
+    font-family: var(--tipo);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.proyecto__descripcion{
+    font-size: 1.5rem;
+    font-family: var(--tipo);
+    font-weight: 500;
+}
+
+
+.card_content {
+    display: none; /* Ocultar el contenido de la tarjeta por defecto */
+}
+
+.card_content.visible {
+    display: block; /* Mostrar el contenido de la tarjeta cuando se active */
+}
+
+
+
+.card_img img {
+    max-width: 100%; /* Establece el ancho máximo al 100% del contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+  }
+
+.card_img img {
+  max-width: 100%; /* Establece el ancho máximo al 100% del contenedor */
+  max-height: 100%; /* Establece la altura máxima al 100% del contenedor */
+}
+
+
+
+.footer{
+    margin-top: 2vh;
+    
+
+}
+
+.footer__texto{
+    font-family: var(--tipo);
+    font-size: 1rem;
+    text-align: center;
+    color: var(--negro);
+}
+
+/* Estilos para la página de contacto */
+
+
+.background_contact{
+    background-color: var(--negro);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+.carousel-container {
+    overflow: hidden;
+    width: 70vw;
+    max-height: 85vh; 
+    margin: 0 auto; 
+    object-fit: cover;
+    margin-top: 5vh;
+    
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: auto; 
+  }
+
+
+.footer_contact {
+    z-index: 1;
+}
+
+.social{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#github {
+    width: 3rem;
+    max-height: 3rem;
+    
+}
+
+#linkedin {
+    width: 3rem;
+    max-height: 3rem;
+}
+
+
+#behance {
+    width: 3rem;
+    max-height: 3rem;
+}
+
+#mail{
+    width:3rem;
+    max-height: 3rem;
+}
+
+.contact-btn{
+    width: 30vw;
+    max-height: 20vh;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: var(--verde);
+}
+
+
+
+
+  
+
+
+/*TRANSICIONES*/
+
+.fade-out{
+    animation: fadeOut 1s;
+}
+
+@keyframes fadeOut{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+body{
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn{
+    to{
+        opacity:1;
+    }
+}
+
+
+/*CURSOR PERSONALIZADO*/
+
+#customCursor {
+    position: fixed;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--blanco); /* Cambia el color del cursor aquí */
+    pointer-events: none; /* Para que el cursor personalizado no interfiera con los eventos del mouse */
+    z-index: 1; /* Asegúrate de que el cursor personalizado esté en la capa superior */
+    transition: transform 0.1s ease; /* Agrega una transición suave */
+  }
+
+
+
+
+
+
+
+/* Estilos responsivos */
+
+  @media screen and (max-width:1024px) {
+   /* Estilos para dispositivos con una resolución máxima de 1024px */
+    
+    header .logo{
+        width: 20vw;
+    }
+    
+    nav ul{
+        gap: 2.5rem;
+    }
+    
+    nav ul li a {
+        font-size: 2rem;
+        padding: .2rem;
+        border-radius: 2rem;
+        
+    }
+    
+    section{
+        width: 100vw;
+        min-height:100vh;
+        display: flex;
+        
+    }
+    
+    section img{
+        width: 100vw;
+        max-height: 100vh;
+       
+    }
+    
+    section #slogan{
+        font-size: 4rem;
+        top: 80vh;
+          
+    }
+    
+    .info{
+        margin-top: 20vh;
+        padding: 2rem;
+        margin: auto;
+        
+    }
+    
+    .info h2{
+        margin-top: 2vh;
+        font-size: 3rem;
+    }
+    
+    .info h3{
+        font-size: 2rem;
+      
+    }
+    
+    .info p{
+        font-size: 2rem;
+        line-height:3rem;
+        max-width: 60vw;
+    }
+
+    .header__about a{
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .header__back a{
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .container {
+      padding: 10rem;
+        
+    }
+    
+    .acordeon{
+        width:60vw;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .h2{
+        
+        padding: .5rem;
+        font-size: 1.5rem;
+    }
+    
+    .img_about{
+        margin-bottom: 10vh;
+    }
+    
+    .card_content{
+        padding: 2rem;
+    
+    }
+
+    .proyecto__titulo{
+        font-size: 2rem;
+    }
+    
+    .proyecto__descripcion{
+        font-size: 1.5rem;
+    }
+      
+      .carousel {
+        margin-top: 10vh;
+        
+      }
+    
+    
+    .footer_contact {
+        z-index: 1;
+    }
+    
+    .social{
+
+        margin-top: 1rem;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+/* Estilos para dispositivos con una resolución máxima de 960px */
+
+@media screen and (max-width:960px) {
+   
+    
+    header .logo{
+        width: 20vw;
+    }
+    
+    nav ul{
+        gap: 2.5rem;
+    }
+    
+    nav ul li a {
+        font-size: 1.5rem;
+        padding: .2rem;
+        border-radius: 2rem;
+        
+    }
+    
+    section{
+        width: 100vw;
+        min-height:60vh;
+        display: flex;
+        
+    }
+    
+    section img{
+        width: 100vw;
+        max-height: 80vh;
+       
+    }
+    
+    section #slogan{
+        font-size: 3.5rem;
+        top: 45vh;
+          
+    }
+    
+    .info{
+        margin-top: 20vh;
+        padding: 2rem;
+        margin: auto;
+        
+    }
+    
+    .info h2{
+        margin-top: 2vh;
+        font-size: 3rem;
+    }
+    
+    .info h3{
+        font-size: 2rem;
+      
+    }
+    
+    .info p{
+        font-size: 1.5rem;
+        line-height:2.5rem;
+        max-width: 60vw;
+    }
+
+    .header__about a{
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .header__back a{
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .container {
+      padding: 10rem;
+        
+    }
+    
+    .acordeon{
+        width:60vw;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .h2{
+        
+        padding: .5rem;
+        font-size: 1.5rem;
+    }
+    
+
+    .img_about{
+        margin-bottom: 10vh;
+    }
+    
+    .card_content{
+        padding: 2rem;
+    
+    }
+
+    .proyecto__titulo{
+        font-size: 2rem;
+    }
+    
+    .proyecto__descripcion{
+        font-size: 1rem;
+    }
+      
+      .carousel {
+        margin-top: 20vh;
+        
+      }
+    
+    
+    .footer_contact {
+        z-index: 1;
+    }
+    
+    .social{
+
+        margin-top: 5rem;
+    }
+    
+}
+
+
+/* Estilos para dispositivos con una resolución máxima de 480px */
+
+@media screen and (max-width:480px) {
+
+    header{
+        width: 100vw;
+        background-color: var(--negro);
+        padding: 2rem;
+        display: flex;
+        object-fit: cover;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+    }
+
+    #hamburguesa{
+        display:flex;
+        width: 20vw;
+    }
+    
+    .menulist{
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: .5rem;
+        top: -1rem;
+        flex-direction: column;
+    }
+   
+    nav ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+        margin-top: 10rem;
+    }
+
+    nav ul li a {
+        font-size: 1.5rem;
+        
+    }
+    
+    section{
+        width: 100vw;
+        min-height:70vh;
+        display: flex;
+        
+    }
+
+    section img{
+        width: 100vw;
+        max-height: 100vh;
+       
+    }
+    
+    section #slogan{
+        font-size: 2rem;
+        top: 65vh;
+    }
+    
+    
+    .info{
+        padding: 1rem;
+    }
+    
+    .info h2{
+        font-size: 2rem;
+    }
+    
+    .info h3{
+        font-size: 1.5rem;
+    }
+    
+    .info p{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: justify;
+        max-width: 70vw;
+        
+        
+        
+    }
+    .img_about{
+        width: 40vw;
+        margin-bottom: 5vh;
+    }
+    .header__about a{
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    
+    .header__back a{
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .container {
+      padding: 1rem;
+        
+    }
+    
+    .acordeon{
+        width:80vw;
+        border-radius: 1rem;
+    }
+    
+    .h2{
+        padding: .5rem;
+        font-size: 1.5rem;
+    }
+    
+    
+    
+    .card_content{
+        padding: 1.5rem;
+    
+    }
+
+    .proyecto__titulo{
+        font-size: 1.5rem;
+    }
+    
+    .proyecto__descripcion{
+        font-size: 1rem;
+    }
+      
+      .carousel {
+        margin-top: 20vh;
+        
+      }
+    
+    
+    .footer_contact {
+        z-index: 1;
+    }
+    
+    .social{
+
+        margin-top: 5rem;
+    }
+    
+}
+
+
